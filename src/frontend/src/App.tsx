@@ -1,6 +1,5 @@
 import { CollectionPage } from "@/pages/CollectionPage";
 import { Home } from "@/pages/Home";
-import { TermsPage } from "@/pages/TermsPage";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -30,17 +29,7 @@ const collectionRoute = createRoute({
   component: CollectionPage,
 });
 
-const termsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: "/terms",
-  component: TermsPage,
-});
-
-const routeTree = rootRoute.addChildren([
-  homeRoute,
-  collectionRoute,
-  termsRoute,
-]);
+const routeTree = rootRoute.addChildren([homeRoute, collectionRoute]);
 
 const router = createRouter({ routeTree });
 

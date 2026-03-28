@@ -1,4 +1,3 @@
-import { COLLECTIONS, CollectionButton } from "@/components/CollectionButton";
 import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { motion } from "motion/react";
@@ -78,7 +77,6 @@ function RealisticFlame({
   );
 }
 
-// Helper: renders "Luxx" + superscript "o" tightly
 function LuxxoText({
   suffix,
   style,
@@ -101,13 +99,119 @@ function LuxxoText({
   );
 }
 
-const CONCRETE_PAGES = [
+const CATALOG_IMAGE_STYLE: React.CSSProperties = {
+  width: "100%",
+  borderRadius: "12px",
+  border: "1px solid oklch(0.77 0.12 85 / 30%)",
+  boxShadow: "0 0 40px oklch(0.77 0.12 85 / 12%)",
+  display: "block",
+};
+
+const LABEL_STYLE: React.CSSProperties = {
+  color: "oklch(0.77 0.12 85)",
+  fontFamily: "'Playfair Display', serif",
+  fontSize: "0.85rem",
+  fontWeight: 600,
+  letterSpacing: "0.15em",
+  textTransform: "uppercase",
+  marginBottom: "8px",
+  textAlign: "center",
+};
+
+type CollectionEntry =
+  | { label: string; src: string }
+  | { label: string; pages: { label: string; src: string }[] };
+
+const COLLECTIONS: CollectionEntry[] = [
+  {
+    label: "Daisy",
+    pages: [
+      {
+        label: "Daisy – Page 1",
+        src: "/assets/uploads/Screenshot-2026-03-19-224753-6.png",
+      },
+      {
+        label: "Daisy – Page 2",
+        src: "/assets/uploads/image_2026-03-19_221618623-1.png",
+      },
+    ],
+  },
+  {
+    label: "Sunflower",
+    pages: [
+      {
+        label: "Sunflower – Page 1",
+        src: "/assets/uploads/Screenshot-2026-03-19-222323-2.png",
+      },
+      {
+        label: "Sunflower – Page 2",
+        src: "/assets/uploads/image_2026-03-19_222348286-1.png",
+      },
+    ],
+  },
+  {
+    label: "Rose",
+    pages: [
+      {
+        label: "Rose – Page 1",
+        src: "/assets/uploads/image_2026-03-19_222926034-1.png",
+      },
+      {
+        label: "Rose – Page 2",
+        src: "/assets/uploads/Screenshot-2026-03-19-224713-10.png",
+      },
+    ],
+  },
+  {
+    label: "Teddy Bear",
+    pages: [
+      {
+        label: "Teddy Bear – Page 1",
+        src: "/assets/uploads/image_2026-03-19_223652033-2.png",
+      },
+      {
+        label: "Teddy Bear – Page 2",
+        src: "/assets/uploads/image_2026-03-19_223719759-1.png",
+      },
+    ],
+  },
+  { label: "Tulip", src: "/assets/uploads/Screenshot-2026-03-19-224323-8.png" },
+  {
+    label: "Lotus",
+    src: "/assets/uploads/Screenshot-2026-03-19-224313-11.png",
+  },
+  { label: "Urli", src: "/assets/uploads/Screenshot-2026-03-19-224353-9.png" },
+  { label: "Ocean", src: "/assets/uploads/Screenshot-2026-03-19-224410-5.png" },
+  {
+    label: "Scandinavian",
+    src: "/assets/uploads/Screenshot-2026-03-19-224427-7.png",
+  },
+  {
+    label: "Evil Eye",
+    src: "/assets/uploads/Screenshot-2026-03-19-224452-1.png",
+  },
+  {
+    label: "Zodiac",
+    src: "/assets/uploads/Screenshot-2026-03-19-224519-3.png",
+  },
+  {
+    label: "Crystals",
+    src: "/assets/uploads/Screenshot-2026-03-19-224538-4.png",
+  },
+  {
+    label: "Food Edition",
+    src: "/assets/uploads/Screenshot-2026-03-19-224609-2.png",
+  },
+];
+
+const CONCRETE_IMAGES = [
+  "/assets/uploads/screenshot_2026-03-28_203807-019d3518-ae55-7709-97f3-b5da8d068dd9-1.png",
   "/assets/uploads/screenshot_2026-03-28_203853-019d3518-b007-7461-92c9-babc44b4aa66-5.png",
   "/assets/uploads/screenshot_2026-03-28_204009-019d3518-b026-707e-a7df-b288758b171e-7.png",
   "/assets/uploads/screenshot_2026-03-28_204035-019d3518-b0b1-7129-8a93-9a23084d160a-8.png",
-  "/assets/uploads/screenshot_2026-03-28_203835-019d3546-3c7b-76cd-ab45-a2d58cb49e13-2.png",
-  "/assets/uploads/screenshot_2026-03-28_203922-019d3546-3c64-7283-9597-4f83ce2c83fa-3.png",
-  "/assets/uploads/screenshot_2026-03-28_203908-019d3546-3be5-70b8-aea5-951ea6614314-1.png",
+  "/assets/uploads/screenshot_2026-03-28_203922-019d3518-afdb-753e-b6c8-3575aae00f8e-4.png",
+  "/assets/uploads/screenshot_2026-03-28_203908-019d3518-b0d7-7770-87b2-7ca6ace7e6bf-9.png",
+  "/assets/uploads/screenshot_2026-03-28_203835-019d3518-b003-72db-83e7-0214ca40942f-6.png",
 ];
 
 export function Home() {
@@ -1236,42 +1340,56 @@ export function Home() {
               />
             </div>
           </motion.div>
-        </div>
 
-        <div id="collections" className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
-            className="text-center mb-14"
+          {/* Collection catalogue images inline */}
+          <div
+            className="w-full flex flex-col items-center gap-10"
+            data-ocid="candles.list"
           >
-            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
-              Curated for You
-            </p>
-            <h3 className="font-playfair text-4xl md:text-5xl font-bold text-gold gold-glow">
-              Shop by Collection
-            </h3>
-            <div
-              className="mx-auto mt-5 h-px w-32"
-              style={{
-                background:
-                  "linear-gradient(90deg, transparent, oklch(0.77 0.12 85 / 60%), transparent)",
-              }}
-            />
-          </motion.div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
-            {COLLECTIONS.map((col, i) => (
-              <motion.div
-                key={col.id}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.04 }}
-              >
-                <CollectionButton collection={col} index={i} />
-              </motion.div>
-            ))}
+            {COLLECTIONS.map((col, i) => {
+              if ("pages" in col) {
+                return (
+                  <motion.div
+                    key={col.label}
+                    className="w-full max-w-3xl flex flex-col items-center gap-6"
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: i * 0.03 }}
+                    data-ocid={`candles.item.${i + 1}`}
+                  >
+                    {col.pages.map((page) => (
+                      <div key={page.src} className="w-full">
+                        <p style={LABEL_STYLE}>{page.label}</p>
+                        <img
+                          src={page.src}
+                          alt={page.label}
+                          style={CATALOG_IMAGE_STYLE}
+                        />
+                      </div>
+                    ))}
+                  </motion.div>
+                );
+              }
+              return (
+                <motion.div
+                  key={col.label}
+                  className="w-full max-w-3xl"
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.03 }}
+                  data-ocid={`candles.item.${i + 1}`}
+                >
+                  <p style={LABEL_STYLE}>{col.label}</p>
+                  <img
+                    src={col.src}
+                    alt={col.label}
+                    style={CATALOG_IMAGE_STYLE}
+                  />
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -1315,35 +1433,34 @@ export function Home() {
             </p>
           </motion.div>
 
-          {/* First concrete screenshot */}
-          <div className="w-full max-w-3xl mb-8">
-            <img
-              src="/assets/uploads/screenshot_2026-03-28_203807-019d3518-ae55-7709-97f3-b5da8d068dd9-1.png"
-              alt="Luxxo Concrete products"
-              style={{
-                width: "100%",
-                borderRadius: "12px",
-                border: "1px solid oklch(0.77 0.12 85 / 30%)",
-                boxShadow: "0 0 50px oklch(0.77 0.12 85 / 10%)",
-              }}
-            />
+          <div
+            className="w-full flex flex-col items-center gap-8"
+            data-ocid="concrete.list"
+          >
+            {CONCRETE_IMAGES.map((src, i) => (
+              <motion.div
+                key={src}
+                className="w-full max-w-3xl"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.05 }}
+                data-ocid={`concrete.item.${i + 1}`}
+              >
+                <img
+                  src={src}
+                  alt={`Luxxo Concrete catalog page ${i + 1}`}
+                  style={{
+                    width: "100%",
+                    borderRadius: "12px",
+                    border: "1px solid oklch(0.77 0.12 85 / 30%)",
+                    boxShadow: "0 0 50px oklch(0.77 0.12 85 / 10%)",
+                    display: "block",
+                  }}
+                />
+              </motion.div>
+            ))}
           </div>
-
-          {/* Subsequent concrete catalog pages */}
-          {CONCRETE_PAGES.map((src) => (
-            <div key={src} className="w-full max-w-3xl mb-8">
-              <img
-                src={src}
-                alt="Luxxo Concrete catalog page"
-                style={{
-                  width: "100%",
-                  borderRadius: "12px",
-                  border: "1px solid oklch(0.77 0.12 85 / 20%)",
-                  boxShadow: "0 0 30px oklch(0.77 0.12 85 / 8%)",
-                }}
-              />
-            </div>
-          ))}
         </div>
       </section>
 
