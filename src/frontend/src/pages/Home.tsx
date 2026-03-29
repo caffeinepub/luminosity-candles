@@ -15,13 +15,11 @@ function SectionLogo() {
         position: "absolute",
         top: "16px",
         right: "16px",
-        width: "160px",
+        width: "80px",
         height: "auto",
         zIndex: 10,
         pointerEvents: "none",
         borderRadius: "8px",
-        border: "1.5px solid oklch(0.77 0.12 85 / 60%)",
-        boxShadow: "0 0 18px oklch(0.77 0.12 85 / 30%)",
       }}
     />
   );
