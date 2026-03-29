@@ -19,9 +19,7 @@ export function Navigation() {
             to="/"
             className="font-playfair text-2xl font-bold tracking-wider text-gold gold-glow no-underline"
           >
-            Luxx
-            <sup style={{ fontSize: "0.6em", verticalAlign: "super" }}>o</sup>{" "}
-            Studios
+            Luxxo Studios
           </Link>
           <nav
             className="hidden md:flex items-center gap-8"

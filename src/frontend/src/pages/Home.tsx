@@ -100,27 +100,12 @@ function RealisticFlame({
   );
 }
 
-// Helper: renders "Luxx" + superscript "o" tightly
+// Helper: renders "Luxxo" as a normal word followed by the suffix
 function LuxxoText({
   suffix,
   style,
 }: { suffix: string; style?: React.CSSProperties }) {
-  return (
-    <span style={style}>
-      Luxx
-      <sup
-        style={{
-          fontSize: "0.65em",
-          verticalAlign: "0.1em",
-          marginLeft: "0.05em",
-          letterSpacing: 0,
-        }}
-      >
-        o
-      </sup>{" "}
-      {suffix}
-    </span>
-  );
+  return <span style={style}>Luxxo {suffix}</span>;
 }
 
 const CONCRETE_PAGES = [
