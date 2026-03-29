@@ -11,7 +11,7 @@ export function Footer() {
     >
       <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-3">
         <p className="text-xs text-muted-foreground">
-          &copy; {year} Luxx Candles. All rights reserved.
+          &copy; {year} Luxxo Candles- Sculpting Scent And Stone
         </p>
         <p className="text-xs text-muted-foreground">
           Built with ❤️ using{" "}
