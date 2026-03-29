@@ -88,9 +88,9 @@ function LuxxoText({
       Luxx
       <sup
         style={{
-          fontSize: "0.45em",
-          verticalAlign: "super",
-          marginLeft: "-0.18em",
+          fontSize: "0.65em",
+          verticalAlign: "0.1em",
+          marginLeft: "0.05em",
           letterSpacing: 0,
         }}
       >
@@ -1344,6 +1344,23 @@ export function Home() {
           ))}
         </div>
       </section>
+
+      {/* Extra pages at bottom */}
+      <div style={{ background: "oklch(0.09 0.004 280)" }}>
+        {[
+          "/assets/uploads/screenshot_2026-03-28_204009-019d3582-4e53-71ae-ba68-b7baafa35778-1.png",
+          "/assets/uploads/screenshot_2026-03-28_203956-019d3582-4e65-7099-b4c1-6d7ab4a3b9d6-2.png",
+          "/assets/uploads/screenshot_2026-03-28_204022-019d3582-4e74-72f6-bf7b-439a850265c3-3.png",
+          "/assets/uploads/screenshot_2026-03-28_204035-019d3582-4ed5-7269-8eac-b0d472eb7e3e-4.png",
+        ].map((src) => (
+          <img
+            key={src}
+            src={src}
+            alt="page"
+            style={{ width: "100%", display: "block" }}
+          />
+        ))}
+      </div>
 
       <Footer />
     </div>
