@@ -14,30 +14,48 @@ const TWO_PAGE_COLLECTIONS = ["daisy", "sunflower", "rose", "teddy"];
 const COLLECTION_IMAGES: Record<string, Record<1 | 2, string> | { 1: string }> =
   {
     daisy: {
-      1: "/assets/uploads/Screenshot-2026-03-19-224753-6.png",
-      2: "/assets/uploads/image_2026-03-19_221618623-1.png",
+      1: "/assets/uploads/screenshot_2026-03-29_205915-019d3a44-8c97-761a-a040-a85b7f76d045-3.png",
+      2: "/assets/uploads/screenshot_2026-03-29_205929-019d3a44-8aed-736b-adfe-b540417728f2-1.png",
     },
     sunflower: {
-      1: "/assets/uploads/Screenshot-2026-03-19-222323-2.png",
-      2: "/assets/uploads/image_2026-03-19_222348286-1.png",
+      1: "/assets/uploads/screenshot_2026-03-29_205939-019d3a44-8c65-742b-a370-da562d3fe989-2.png",
+      2: "/assets/uploads/screenshot_2026-03-29_205948-019d3a44-9e85-772e-b9dd-10fdf43100b3-15.png",
     },
     rose: {
-      1: "/assets/uploads/image_2026-03-19_222926034-1.png",
-      2: "/assets/uploads/Screenshot-2026-03-19-224713-10.png",
+      1: "/assets/uploads/screenshot_2026-03-29_210039-019d3a44-9c36-7428-812b-290763f6e5ee-13.png",
+      2: "/assets/uploads/screenshot_2026-03-29_210207-019d3a44-9f04-745b-a3b4-f1de3dc0ece0-16.png",
     },
     teddy: {
-      1: "/assets/uploads/image_2026-03-19_223652033-2.png",
-      2: "/assets/uploads/image_2026-03-19_223719759-1.png",
+      1: "/assets/uploads/screenshot_2026-03-29_210328-019d3a44-8f8c-753c-add4-54ad7b3e4ba3-8.png",
+      2: "/assets/uploads/screenshot_2026-03-29_210345-019d3a44-8f5f-7768-af21-d71d233f6325-6.png",
     },
-    tulip: { 1: "/assets/uploads/Screenshot-2026-03-19-224323-8.png" },
-    lotus: { 1: "/assets/uploads/Screenshot-2026-03-19-224313-11.png" },
-    urli: { 1: "/assets/uploads/Screenshot-2026-03-19-224353-9.png" },
-    ocean: { 1: "/assets/uploads/Screenshot-2026-03-19-224410-5.png" },
-    scandinavian: { 1: "/assets/uploads/Screenshot-2026-03-19-224427-7.png" },
-    "evil-eye": { 1: "/assets/uploads/Screenshot-2026-03-19-224452-1.png" },
-    zodiac: { 1: "/assets/uploads/Screenshot-2026-03-19-224519-3.png" },
-    crystals: { 1: "/assets/uploads/Screenshot-2026-03-19-224538-4.png" },
-    food: { 1: "/assets/uploads/Screenshot-2026-03-19-224609-2.png" },
+    tulip: {
+      1: "/assets/uploads/screenshot_2026-03-29_210002-019d3a44-9af1-70bc-a597-156f020539f0-11.png",
+    },
+    lotus: {
+      1: "/assets/uploads/screenshot_2026-03-29_210024-019d3a44-8dcf-7218-9a0a-46940e7a50a2-4.png",
+    },
+    urli: {
+      1: "/assets/uploads/screenshot_2026-03-29_210401-019d3a44-8f9f-723a-8a9f-0d52a7a82c29-10.png",
+    },
+    ocean: {
+      1: "/assets/uploads/screenshot_2026-03-29_210411-019d3a44-8f87-773f-a2c2-23c854f8fde9-9.png",
+    },
+    scandinavian: {
+      1: "/assets/uploads/screenshot_2026-03-29_210451-019d3a44-a0a8-70d9-96cf-722298360e86-17.png",
+    },
+    "evil-eye": {
+      1: "/assets/uploads/screenshot_2026-03-29_210505-019d3a44-9d10-71ab-a7b9-6ac2611c89da-14.png",
+    },
+    zodiac: {
+      1: "/assets/uploads/screenshot_2026-03-29_210519-019d3a44-8e5b-70ad-8c2d-b3057a69c3f2-5.png",
+    },
+    crystals: {
+      1: "/assets/uploads/screenshot_2026-03-29_210534-019d3a44-8f4e-76c1-b109-f08ad3301dca-7.png",
+    },
+    food: {
+      1: "/assets/uploads/screenshot_2026-03-29_210617-019d3a44-9b87-7279-b834-a993edb60bce-12.png",
+    },
   };
 
 function ImageCollectionLayout({

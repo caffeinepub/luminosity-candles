@@ -3,6 +3,30 @@ import { Footer } from "@/components/Footer";
 import { Navigation } from "@/components/Navigation";
 import { motion } from "motion/react";
 
+const LOGO_SRC =
+  "/assets/uploads/whatsapp_image_2026-03-25_at_1.00.07_pm-019d3a0d-328c-763f-b72d-dde1839ed5eb-1.jpeg";
+
+function SectionLogo() {
+  return (
+    <img
+      src={LOGO_SRC}
+      alt="Luxxo Studios logo"
+      style={{
+        position: "absolute",
+        top: "16px",
+        right: "16px",
+        width: "160px",
+        height: "auto",
+        zIndex: 10,
+        pointerEvents: "none",
+        borderRadius: "8px",
+        border: "1.5px solid oklch(0.77 0.12 85 / 60%)",
+        boxShadow: "0 0 18px oklch(0.77 0.12 85 / 30%)",
+      }}
+    />
+  );
+}
+
 function RealisticFlame({
   cx,
   baseWidth,
@@ -122,6 +146,8 @@ export function Home() {
         }}
         data-ocid="hero.section"
       >
+        <SectionLogo />
+
         <div
           className="absolute right-0 top-0 w-2/3 h-full opacity-20 pointer-events-none"
           style={{
@@ -1181,12 +1207,14 @@ export function Home() {
       {/* ═══════════════════════════════════════════ */}
       <section
         id="luxxo-candles"
-        className="py-20"
+        className="relative py-20"
         style={{
           background: "oklch(0.09 0.004 280)",
           borderTop: "1px solid oklch(0.77 0.12 85 / 30%)",
         }}
       >
+        <SectionLogo />
+
         <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -1279,12 +1307,14 @@ export function Home() {
       {/* ═══════════════════════════════════════════ */}
       <section
         id="luxxo-concrete"
-        className="py-20"
+        className="relative py-20"
         style={{
           background: "oklch(0.07 0.004 280)",
           borderTop: "2px solid oklch(0.77 0.12 85 / 40%)",
         }}
       >
+        <SectionLogo />
+
         <div className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
